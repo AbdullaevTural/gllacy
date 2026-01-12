@@ -53,12 +53,13 @@
                 <span class="visually-hidden">Поиск</span>
               </a>
               <form class="main_form form_search" action="https://echo.htmlacademy.ru" method="get">
-                <input class="input_field" type="search" id="search" placeholder="Что ищем?" required />
+                <input class="input_field" type="search" id="search" name="search" placeholder="Что ищем?" value
+                  required />
               </form>
             </li>
             <li class="user_menu_item">
               <a class="user_menu_link user_menu_link_login" href="/login">
-                <img src="img/entrance.svg" alt="" />
+                <img src="img/entrance.svg" alt="Вход в лк" />
                 <span>Вход</span>
               </a>
               <form class="main_form form_login" action="https://echo.htmlacademy.ru" method="post">
@@ -236,8 +237,8 @@
                 всего самого вкусного, что у нас происходит. Обещаем не спамить
                 и не слать всякой ненужной ерунды. Честно =)
               </p>
-              <form class="subscribe_form">
-                <input type="email" placeholder="Электронная почта" required />
+              <form class="subscribe_form" action="https://echo.htmlacademy.ru" method="post">
+                <input type="email" name="email" placeholder="Электронная почта" required />
                 <button class="main_btn" type="submit">Отправить</button>
               </form>
             </div>
@@ -266,6 +267,27 @@
           <a class="main_btn contacts_btn" href="#">Форма обратной связи</a>
         </section>
       </div>
+      <section class="modal modal-feedback">
+        <b>Мы обязательно вам ответим!</b>
+        <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="feedback-form-user-info">
+            <div>
+              <label class="visually-hidden" for="name">Ваше имя:</label>
+              <input id="name" type="text" name="name" placeholder="Как вас зовут?" required>
+            </div>
+            <div>
+              <label class="visually-hidden" for="email">Ваш e-mail:</label>
+              <input id="email" type="email" name="email" placeholder="Ваша почта для ответа?" required>
+            </div>
+          </div>
+          <div>
+            <label class="visually-hidden" for="message">Текст письма:</label>
+            <textarea id="message" name="message" placeholder="Напишите что-нибудь..."></textarea>
+          </div>
+          <button class="button main_btn" type="submit">Отправить</button>
+        </form>
+        <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+      </section>
     </section>
     <footer class="main-footer container">
       <div class="main-footer_social">
@@ -345,8 +367,9 @@
         </p>
       </div>
     </footer>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="js/map.js"></script>
+    <script src="js/slide.js"></script>
+    <script src="js/modal-feedback.js"></script>
   </body>
 </html>
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-<script src="js/map.js"></script>
-<script src="js/slide.js"></script>

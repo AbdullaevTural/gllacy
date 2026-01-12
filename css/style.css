@@ -826,6 +826,7 @@ ul.slider {
   border: 0;
   padding: 8px 20px 12px;
   cursor: pointer;
+  align-self: flex-start;
 }
 
 .contacts {
@@ -912,6 +913,101 @@ ul.slider {
 
 .contacts_container * {
   pointer-events: auto;
+}
+
+body:has(.modal-feedback.modal-show)::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000004d;
+  z-index: 999;
+}
+
+.modal-feedback {
+  position: fixed;
+  display: none;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 478px;
+  padding: 12px 25px 27px;
+  background: #f8f7f4;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.modal-feedback b {
+  font-weight: 500;
+  color: #323232;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.feedback-form textarea {
+  height: 155px;
+  padding: 11px 14px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-weight: 500;
+  color: #999999;
+  border: 1px solid #d3d3d2;
+}
+
+.feedback-form .button {
+  padding: 11px 25px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #fff;
+  border: 0;
+  margin-top: 25px;
+  align-self: flex-end;
+}
+
+.feedback-form-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.feedback-form-user-info input {
+  padding: 11px 14px;
+  width: 267px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-weight: 500;
+  color: #999999;
+  border: 1px solid #d3d3d2;
+}
+
+.modal-close {
+  position: absolute;
+  width: 18px;
+  top: 12px;
+  right: 25px;
+  height: 18px;
+  background: url("../img/cross-big.svg") center / contain no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-show {
+  display: block;
+  animation: animate_fading 1s;
+  animation-timing-function: linear;
 }
 
 .main-footer {
@@ -1316,7 +1412,7 @@ ul.slider {
   gap: 20px;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 16px;
+  margin-bottom: 76px;
 }
 
 .goods-item {
@@ -1489,4 +1585,8 @@ p.goods_basket_total {
   font-weight: 700;
   line-height: 24px;
   color: #fff;
+}
+
+.feedback-form input:focus {
+  border: 2px solid rgb(46 136 228 / 52%);
 }
